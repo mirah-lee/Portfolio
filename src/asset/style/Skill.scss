@@ -1,0 +1,130 @@
+@import "../../asset/common/_mixin.scss";
+
+@keyframes underline {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.skill {
+  position: relative;
+  background-color: #f7f7f7;
+  height: 100vh;
+
+  h2 {
+    @include titleSet;
+    color: #ff5311;
+  }
+
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 170px;
+
+    .textBox {
+      margin-top: 50px;
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+      gap: 150px;
+
+      .titleBox {
+        font-size: 40px;
+        line-height: 40px;
+        
+        ul {
+          li {
+            position: relative;
+            color: rgba(0, 0, 0, 0.63);
+            margin: 40px 0;
+            width: 100%;
+
+            &:hover {
+              color: #000;
+
+              &::after {
+                content: "";
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: black;
+                // border-bottom: 2px solid #000;
+                animation: underline 1s ease;
+              }
+            }
+          }
+        }
+      }
+
+      .conBox {
+        margin-top: 40px;
+        position: relative;
+
+        span {
+          &::before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 4px;
+            width: 30px;
+            height: 19px;
+            background: url(../images/ico_arrow_02.svg) no-repeat center center / contain;
+            display: block;
+            transition: all 0.3s ease-out 0.25s;
+          }
+        }
+
+        // p {
+        //   font-size: 20px;
+        //   margin-left: 50px;
+        //   display: none;
+        //   &.active {
+        //     display: block;
+        //     line-height: 30px;
+        //   }
+        // }
+        p {
+          position: absolute;
+          top: 0;
+          left: 50px;
+          width: 500px;
+          font-size: 20px;
+          line-height: 30px;
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+
+  .obj {
+    font-size: 160px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: -280px;
+    right: -105px;
+    transform: rotate(-90deg);
+    letter-spacing: -5px;
+    text-shadow: -1px -1px 0 hsla(17, 100%, 53%, 0.5),
+      1px -1px 0 hsla(17, 100%, 53%, 0.5), -1px 1px 0 hsla(17, 100%, 53%, 0.5),
+      1px 1px 0 hsla(17, 100%, 53%, 0.5);
+    transition: all 0.9s ease-out 0.5s;
+    z-index: 5;
+
+    p {
+      margin: 0;
+    }
+
+    &.active {
+      top: 600px;
+    }
+  }
+}

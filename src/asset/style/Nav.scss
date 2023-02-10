@@ -1,0 +1,39 @@
+nav {
+  ul {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 50px;
+    li{
+      cursor: pointer;
+    }
+    li:last-child {
+      border-radius: 0 20px;
+      padding: 20px;
+      background-color: #fff;
+      color: black;
+    }
+  }
+}
+
+header{
+  &.active {
+    .header_wrap {
+      nav {
+        ul {
+          li:last-child {
+            background-color: #000;
+            color: #fff;
+          }
+          li{
+            a{
+              &:hover{
+                color :#ff5331;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

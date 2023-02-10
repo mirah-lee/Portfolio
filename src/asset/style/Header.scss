@@ -1,0 +1,25 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-weight: 700;
+    z-index: 999;
+    .header_wrap{
+        width: 95%;
+        margin: 0 auto;
+        padding: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        color: #fff;
+    }
+    &.active{
+        background-color: #fff;
+        .header_wrap{
+            padding:13px 0;
+            color: #000;
+        }
+    }
+}
